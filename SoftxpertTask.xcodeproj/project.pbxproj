@@ -99,8 +99,9 @@
 		4106BA612804B35B0018B2CB /* SoftxpertTask */ = {
 			isa = PBXGroup;
 			children = (
-				4106BA622804B35B0018B2CB /* AppDelegate.swift */,
-				4106BA642804B35B0018B2CB /* SceneDelegate.swift */,
+				4106BA922804B7280018B2CB /* App */,
+				4106BA932804B7350018B2CB /* Common */,
+				4106BA942804B74B0018B2CB /* Modules */,
 				4106BA662804B35B0018B2CB /* ViewController.swift */,
 				4106BA682804B35B0018B2CB /* Main.storyboard */,
 				4106BA6B2804B35E0018B2CB /* Assets.xcassets */,
@@ -125,6 +126,173 @@
 				4106BA852804B35E0018B2CB /* SoftxpertTaskUITestsLaunchTests.swift */,
 			);
 			path = SoftxpertTaskUITests;
+			sourceTree = "<group>";
+		};
+		4106BA922804B7280018B2CB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4106BA622804B35B0018B2CB /* AppDelegate.swift */,
+				4106BA642804B35B0018B2CB /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4106BA932804B7350018B2CB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4106BA962804B8600018B2CB /* Utilities */,
+				4106BA952804B8580018B2CB /* Extensions */,
+				4106BAA42804BB7F0018B2CB /* API */,
+				4106BAA52804BB900018B2CB /* Mapper */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4106BA942804B74B0018B2CB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4106BA972804B8700018B2CB /* Search */,
+				4106BA9D2804B8B80018B2CB /* Details */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4106BA952804B8580018B2CB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4106BA962804B8600018B2CB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4106BA972804B8700018B2CB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4106BA982804B8780018B2CB /* View */,
+				4106BA992804B87D0018B2CB /* Interactor */,
+				4106BA9A2804B8840018B2CB /* Presenter */,
+				4106BA9B2804B88B0018B2CB /* Entity */,
+				4106BA9C2804B8920018B2CB /* Router */,
+				4106BAA62804BBA60018B2CB /* Manager */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4106BA982804B8780018B2CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4106BA992804B87D0018B2CB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4106BA9A2804B8840018B2CB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4106BA9B2804B88B0018B2CB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4106BA9C2804B8920018B2CB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4106BA9D2804B8B80018B2CB /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				4106BA9F2804B8E10018B2CB /* View */,
+				4106BAA32804B9030018B2CB /* Interactor */,
+				4106BAA22804B8FB0018B2CB /* Presenter */,
+				4106BAA12804B8EF0018B2CB /* Entity */,
+				4106BAA02804B8E60018B2CB /* Router */,
+				4106BAA72804BBBC0018B2CB /* Manager */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		4106BA9F2804B8E10018B2CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4106BAA02804B8E60018B2CB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4106BAA12804B8EF0018B2CB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4106BAA22804B8FB0018B2CB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4106BAA32804B9030018B2CB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4106BAA42804BB7F0018B2CB /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4106BAA52804BB900018B2CB /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		4106BAA62804BBA60018B2CB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		4106BAA72804BBBC0018B2CB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +588,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
