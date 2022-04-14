@@ -9,6 +9,10 @@ import UIKit
 
 class SuggestionCell: UITableViewCell {
 
+    //MARK: - Outlets
+    
+    @IBOutlet weak var suggestionLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -45,6 +45,9 @@
                 <constraint firstAttribute="trailing" secondItem="3De-OG-VyH" secondAttribute="trailing" id="fzn-lW-OyL"/>
             </constraints>
             <size key="customSize" width="145" height="60"/>
+            <connections>
+                <outlet property="filterLbl" destination="3Ca-6q-AMm" id="6Uk-lT-BhI"/>
+            </connections>
             <point key="canvasLocation" x="131.15942028985509" y="81.026785714285708"/>
         </collectionViewCell>
     </objects>

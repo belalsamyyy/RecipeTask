@@ -9,6 +9,10 @@ import UIKit
 
 class FilterCell: UICollectionViewCell {
 
+    //MARK: - Outlets
+    
+    @IBOutlet weak var filterLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
