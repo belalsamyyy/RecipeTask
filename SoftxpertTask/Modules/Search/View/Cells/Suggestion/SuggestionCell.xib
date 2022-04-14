@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="KGk-i7-Jjw" customClass="SuggestionCell" customModule="SoftxpertTask" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="58"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="383" height="58"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PgM-mf-lVq">
+                        <rect key="frame" x="20" y="9" width="44" height="41"/>
+                        <color key="tintColor" systemColor="tertiaryLabelColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="1Jw-0A-bgj"/>
+                            <constraint firstAttribute="height" constant="42.5" id="h1k-nq-dy7"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Search Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70P-io-EML">
+                        <rect key="frame" x="82" y="10" width="291" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="mYx-t9-RvG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="70P-io-EML" secondAttribute="trailing" constant="10" id="7lk-3j-29r"/>
+                    <constraint firstAttribute="bottom" secondItem="PgM-mf-lVq" secondAttribute="bottom" constant="7" id="BXs-Jc-zSr"/>
+                    <constraint firstItem="70P-io-EML" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="TlQ-Xc-Sev"/>
+                    <constraint firstItem="PgM-mf-lVq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8.5" id="ZRo-AF-dQL"/>
+                    <constraint firstAttribute="bottom" secondItem="70P-io-EML" secondAttribute="bottom" constant="10" id="Zyp-71-o0j"/>
+                    <constraint firstItem="PgM-mf-lVq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="jMY-Ao-5fT"/>
+                    <constraint firstItem="70P-io-EML" firstAttribute="leading" secondItem="PgM-mf-lVq" secondAttribute="trailing" constant="18" id="urj-UU-h92"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="183.33333333333334" y="118.52678571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
