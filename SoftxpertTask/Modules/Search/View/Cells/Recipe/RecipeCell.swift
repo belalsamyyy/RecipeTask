@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SDWebImage
 
-class RecipeCell: UITableViewCell {
+class RecipeCell: UITableViewCell, RecipeCellViewProtocol {
 
     //MARK: - Outlets
     
@@ -15,6 +16,8 @@ class RecipeCell: UITableViewCell {
     @IBOutlet weak var recipeTitleLbl: UILabel!
     @IBOutlet weak var recipeSourceLbl: UILabel!
     @IBOutlet weak var recipeHealthLbls: UILabel!
+    
+    //MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +28,15 @@ class RecipeCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    //MARK: - Functions
+    
+    func configure(viewModel: RecipeSearchViewModel) {
+        recipeImageView.sd_setImage(with: viewModel.image)
+        recipeTitleLbl.text = viewModel.title
+        recipeSourceLbl.text = viewModel.source
+        recipeHealthLbls.text = viewModel.healthLbls
     }
     
 }
