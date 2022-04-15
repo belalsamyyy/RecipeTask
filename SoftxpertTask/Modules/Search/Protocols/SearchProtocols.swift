@@ -33,9 +33,13 @@ protocol SearchPresenterProtocol: AnyObject {
     var view: SearchViewProtocol? { get set } // to avoid retain cycle
     var numberOfRecipes: Int { get }
     var numberOfFilters: Int { get }
+    var next: String { get }
+    
     func viewDidLoad()
     func configureRecipeCell(cell: RecipeCell, indexpath: IndexPath)
     func configureFilterCell(cell: FilterCell, indexpath: IndexPath)
+    func healthFilterTapped(item: Int)
+    func didWeReachToEnd(indexpath: IndexPath)
 }
 
 // router
@@ -48,11 +52,12 @@ protocol SearchRouterProtocol {}
 protocol SearchInteractorInputProtocol {
     var presenter: SearchInteractorOutputProtocol? { get set }
     func getRecipes(searchText: String, filter: HealthFilter)
+    func getMoreRecipes(next: String)
 }
  
 // output
 protocol SearchInteractorOutputProtocol: AnyObject {
-    func recipesFetchedSuccessfully(recipes: [Recipe])
+    func recipesFetchedSuccessfully(recipes: [Recipe], next: String)
     func recipesFetchingFailed(withError error: String)
 }
 

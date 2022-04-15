@@ -25,6 +25,8 @@ struct Links: Codable {
 }
 
 // MARK: - Next
+
+// search response -> _links -> next
 struct Next: Codable {
     var href: String
 }

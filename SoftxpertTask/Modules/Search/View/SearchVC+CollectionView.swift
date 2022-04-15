@@ -28,6 +28,10 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
         presenter.configureFilterCell(cell: cell, indexpath: indexPath)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.healthFilterTapped(item: indexPath.item)
+    }
 }
 
 

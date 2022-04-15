@@ -27,7 +27,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case suggestionTableView:
-            return 2
+            return 3
         case recipesTableView:
             return presenter.numberOfRecipes
         default:
@@ -50,5 +50,16 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
             print("default case")
             return UITableViewCell()
         }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if tableView == recipesTableView {
+            presenter.didWeReachToEnd(indexpath: indexPath)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("table cell tapped !")
     }
 }
