@@ -62,7 +62,7 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
         view?.hideLoadingIndicator()
     }
     
-        
+    
     func configureRecipeCell(cell: RecipeCell, indexpath: IndexPath) {
         let recipe = recipes[indexpath.row]
         let viewModel = RecipeSearchViewModel(recipe: recipe)

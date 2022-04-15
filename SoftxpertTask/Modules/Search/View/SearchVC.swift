@@ -32,6 +32,7 @@ class SearchVC: UIViewController, SearchViewProtocol {
         // Do any additional setup after loading the view.
         setupTableViews()
         setupCollectionView()
+        setupSearchBar()
         presenter?.viewDidLoad()
     }
     
