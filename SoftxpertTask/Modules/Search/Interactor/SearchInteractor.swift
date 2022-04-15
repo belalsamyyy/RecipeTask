@@ -28,8 +28,6 @@ class SearchInteractor: SearchInteractorInputProtocol {
         }
     }
     
-    
-    
     func getMoreRecipes(next: String) {
         RecipeAPIManager.shared.getMoreRecipes(url: next) { [weak self] result in
             switch result {

@@ -18,6 +18,9 @@ class SearchVC: UIViewController, SearchViewProtocol {
     
     @IBOutlet weak var noRecipesLbl: UILabel!
     
+    @IBOutlet weak var recipesActivityIndicator: UIActivityIndicatorView!
+    
+    
     
     //MARK: - Presenter
     var presenter: SearchPresenterProtocol!
@@ -36,11 +39,15 @@ class SearchVC: UIViewController, SearchViewProtocol {
     
     // Loading Indicator
     func showLoadingIndicator() {
-        print("should show loading indicator ...")
+        // should show loading indicator ...
+        recipesActivityIndicator.isHidden = false
+        recipesActivityIndicator.startAnimating()
     }
     
     func hideLoadingIndicator() {
-        print("should hide loading indicator ...")
+        // should hide loading indicator ...
+        recipesActivityIndicator.stopAnimating()
+        recipesActivityIndicator.isHidden = true
     }
     
     func reloadData() {

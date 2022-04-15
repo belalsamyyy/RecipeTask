@@ -23,6 +23,7 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
         return recipes.count
     }
     
+    // filters
     var numberOfFilters: Int {
         return HealthFilter.allCases.count
     }
@@ -40,7 +41,7 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
     func viewDidLoad() {
         print("ViewDidLoad from Presenter ...")
         view?.showLoadingIndicator()
-        interactor.getRecipes(searchText: "chicken", filter: .KETO)
+        interactor.getRecipes(searchText: "chicken", filter: .ALL)
     }
     
     //MARK: - Recipes
@@ -79,8 +80,9 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
     func healthFilterTapped(item: Int) {
         let selectedFilter = HealthFilter.allCases[item]
         print("=> \(selectedFilter.rawValue) tapped filter !")
-        interactor.getRecipes(searchText: "chicken", filter: selectedFilter)
-        self.recipes.removeAll()
+        self.recipes.removeAll() // make recipes array empty
+        view?.showLoadingIndicator() // show loading indicator
+        interactor.getRecipes(searchText: "chicken", filter: selectedFilter) // refetch recieps with the new filter
         view?.reloadData()
     }
     
@@ -93,7 +95,5 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
             interactor.getMoreRecipes(next: next)
         }
     }
-    
-    
     
 }

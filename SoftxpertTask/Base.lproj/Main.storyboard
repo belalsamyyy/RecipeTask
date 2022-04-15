@@ -49,17 +49,24 @@
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Recipes " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGr-UE-2sU">
                                 <rect key="frame" x="20" y="523" width="374" height="49"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
-                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ZKS-cR-01s">
+                                <rect key="frame" x="0.0" y="373" width="414" height="150"/>
+                                <color key="color" systemColor="systemGreenColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="VUt-dx-xcM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2AN-CB-q4x"/>
                             <constraint firstItem="VGr-UE-2sU" firstAttribute="top" secondItem="lhE-Wy-1jU" secondAttribute="bottom" constant="150" id="3UW-Z4-kVZ"/>
+                            <constraint firstItem="ZKS-cR-01s" firstAttribute="top" secondItem="lhE-Wy-1jU" secondAttribute="bottom" id="FKs-EZ-1yn"/>
                             <constraint firstItem="Uvn-OW-Tes" firstAttribute="top" secondItem="rE1-cS-hw6" secondAttribute="bottom" constant="5" id="FaM-i1-ikj"/>
+                            <constraint firstItem="ZKS-cR-01s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OrM-0E-Wc1"/>
                             <constraint firstItem="VUt-dx-xcM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SJI-oL-kAr"/>
+                            <constraint firstItem="VGr-UE-2sU" firstAttribute="top" secondItem="ZKS-cR-01s" secondAttribute="bottom" id="TE2-tt-fIV"/>
                             <constraint firstItem="VUt-dx-xcM" firstAttribute="top" secondItem="Uvn-OW-Tes" secondAttribute="bottom" constant="10" id="XRJ-WG-pAN"/>
                             <constraint firstItem="rE1-cS-hw6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="c2A-81-bmn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VUt-dx-xcM" secondAttribute="bottom" id="fVM-lP-Ud6"/>
@@ -68,6 +75,7 @@
                             <constraint firstItem="lhE-Wy-1jU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gMb-xj-ajb"/>
                             <constraint firstItem="VGr-UE-2sU" firstAttribute="width" secondItem="VUt-dx-xcM" secondAttribute="width" id="gkj-Vv-MHn"/>
                             <constraint firstItem="Uvn-OW-Tes" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hTL-ta-nn3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZKS-cR-01s" secondAttribute="trailing" id="k0h-0c-uPC"/>
                             <constraint firstItem="rE1-cS-hw6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="km1-sf-6sY"/>
                             <constraint firstItem="VGr-UE-2sU" firstAttribute="height" secondItem="VUt-dx-xcM" secondAttribute="height" multiplier="0.0459519" constant="20" id="l8F-5F-MMN"/>
                             <constraint firstItem="rE1-cS-hw6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lZG-MT-LqP"/>
@@ -80,6 +88,7 @@
                     <connections>
                         <outlet property="filtersCollectionView" destination="Uvn-OW-Tes" id="2Fj-ZE-2gX"/>
                         <outlet property="noRecipesLbl" destination="VGr-UE-2sU" id="kx4-HV-mdI"/>
+                        <outlet property="recipesActivityIndicator" destination="ZKS-cR-01s" id="c2m-kT-OEU"/>
                         <outlet property="recipesTableView" destination="VUt-dx-xcM" id="q1Z-Vh-5Tc"/>
                         <outlet property="searchBar" destination="rE1-cS-hw6" id="2bE-98-9z6"/>
                         <outlet property="suggestionTableView" destination="lhE-Wy-1jU" id="kjb-hG-oBq"/>
