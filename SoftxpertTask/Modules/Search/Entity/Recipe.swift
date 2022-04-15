@@ -7,31 +7,34 @@
 
 import Foundation
 
+// MARK: - SearchResponse
 struct SearchResponse: Codable {
-    var from: Int
-    var to: Int
-    var count: Int
-    var _links: Link
+    var from, to, count: Int
+    var _links: Links
     var hits: [Hit]
 }
 
-struct Link: Codable {
-    var next: Next
-}
-
-struct Next: Codable {
-    var href: String
-}
-
+// MARK: - Hit
 struct Hit: Codable {
     var recipe: Recipe
 }
 
+// MARK: - Links
+struct Links: Codable {
+    var next: Next
+}
+
+// MARK: - Next
+struct Next: Codable {
+    var href: String
+}
+
+// MARK: - Recipe
+
+// search response -> hits -> recipe
 struct Recipe: Codable {
     // search
-    var image: String?
-    var label: String?
-    var source: String?
+    var image, label, source: String?
     var healthLabels: [String]?
     // details
     var ingredientLines: [String]?
