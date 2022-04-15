@@ -7,8 +7,8 @@
 
 import UIKit
 
-class FilterCell: UICollectionViewCell {
-
+class FilterCell: UICollectionViewCell, FilterCellViewProtocol {
+    
     //MARK: - Outlets
     
     @IBOutlet weak var filterLbl: UILabel!
@@ -17,5 +17,8 @@ class FilterCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func configure(viewModel: FilterViewModel) {
+        filterLbl.text = viewModel.name
+    }
 }

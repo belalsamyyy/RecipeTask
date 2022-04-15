@@ -17,11 +17,15 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
     
     // recipes
     private var recipes = [Recipe]()
-    var numberOfRows: Int {
+    var numberOfRecipes: Int {
         return recipes.count
     }
     
-    //MARK: - Constructor
+    var numberOfFilters: Int {
+        return HealthFilter.allCases.count
+    }
+        
+    //MARK: - Init
     
     init(view: SearchViewProtocol, interactor: SearchInteractorInputProtocol, router: SearchRouterProtocol) {
         self.view = view
@@ -34,7 +38,7 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
     func viewDidLoad() {
         print("ViewDidLoad from Presenter ...")
         view?.showLoadingIndicator()
-        interactor.getRecipes(searchText: "chicken")
+        interactor.getRecipes(searchText: "chicken", filter: .KETO)
     }
     
     func recipesFetchedSuccessfully(recipes: [Recipe]) {
@@ -49,9 +53,15 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
         view?.hideLoadingIndicator()
     }
     
-    func configure(cell: RecipeCell, indexpath: IndexPath) {
+    func configureRecipeCell(cell: RecipeCell, indexpath: IndexPath) {
         let recipe = recipes[indexpath.row]
         let viewModel = RecipeSearchViewModel(recipe: recipe)
+        cell.configure(viewModel: viewModel)
+    }
+    
+    func configureFilterCell(cell: FilterCell, indexpath: IndexPath) {
+        let filter = HealthFilter.allCases[indexpath.row]
+        let viewModel = FilterViewModel(filter: filter)
         cell.configure(viewModel: viewModel)
     }
     

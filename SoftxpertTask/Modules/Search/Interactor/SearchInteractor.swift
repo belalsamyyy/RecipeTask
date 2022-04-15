@@ -10,8 +10,8 @@ import Foundation
 class SearchInteractor: SearchInteractorInputProtocol {
     weak var presenter: SearchInteractorOutputProtocol?
     
-    func getRecipes(searchText: String) {
-        RecipeAPIManager.shared.getSearchResponse(searchText: searchText) { [weak self] result in
+    func getRecipes(searchText: String, filter: HealthFilter) {
+        RecipeAPIManager.shared.getSearchResponse(searchText: searchText, filter: filter) { [weak self] result in
             switch result {
             case .success(let data):
                 guard let hits = data?.hits else { return }

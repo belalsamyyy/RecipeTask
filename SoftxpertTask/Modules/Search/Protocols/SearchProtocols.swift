@@ -22,13 +22,20 @@ protocol RecipeCellViewProtocol: AnyObject {
     func configure(viewModel: RecipeSearchViewModel)
 }
 
+// filter cell view
+protocol FilterCellViewProtocol: AnyObject {
+    func configure(viewModel: FilterViewModel)
+}
+
 // presenter
 // ===================================
 protocol SearchPresenterProtocol: AnyObject {
     var view: SearchViewProtocol? { get set } // to avoid retain cycle
-    var numberOfRows: Int { get }
+    var numberOfRecipes: Int { get }
+    var numberOfFilters: Int { get }
     func viewDidLoad()
-    func configure(cell: RecipeCell, indexpath: IndexPath)
+    func configureRecipeCell(cell: RecipeCell, indexpath: IndexPath)
+    func configureFilterCell(cell: FilterCell, indexpath: IndexPath)
 }
 
 // router
@@ -40,7 +47,7 @@ protocol SearchRouterProtocol {}
 // input
 protocol SearchInteractorInputProtocol {
     var presenter: SearchInteractorOutputProtocol? { get set }
-    func getRecipes(searchText: String)
+    func getRecipes(searchText: String, filter: HealthFilter)
 }
  
 // output

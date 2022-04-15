@@ -29,7 +29,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         case suggestionTableView:
             return 2
         case recipesTableView:
-            return presenter.numberOfRows
+            return presenter.numberOfRecipes
         default:
             return 0
         }
@@ -43,7 +43,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
             
         case recipesTableView:
             let cell = tableView.dequeue() as RecipeCell
-            presenter.configure(cell: cell, indexpath: indexPath)
+            presenter.configureRecipeCell(cell: cell, indexpath: indexPath)
             return cell
             
         default:

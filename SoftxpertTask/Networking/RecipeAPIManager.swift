@@ -20,7 +20,7 @@ class RecipeAPIManager {
     }
     
     // search response
-    func getSearchResponse(searchText: String, completion: @escaping (_ result: ResultOfObject) -> ()) {
+    func getSearchResponse(searchText: String, filter: HealthFilter, completion: @escaping (_ result: ResultOfObject) -> ()) {
         
         var components = URLComponents(string: BASE_URL)
         components?.path = EndPoints.search
@@ -28,8 +28,13 @@ class RecipeAPIManager {
             URLQueryItem(name: "type", value: "public"),
             URLQueryItem(name: "app_id", value: RECIPE_API_APP_ID),
             URLQueryItem(name: "app_key", value: RECIPE_API_APP_KEY),
-            URLQueryItem(name: "q", value: searchText)
+            URLQueryItem(name: "q", value: searchText),
         ]
+        
+        if filter != .ALL {
+            let healthQuery = URLQueryItem(name: "health", value: filter.query)
+            components?.queryItems?.append(healthQuery)
+        }
         
         guard let url = components?.url else { return }
         let headers: HTTPHeaders = ["Content-type": "application/json"]

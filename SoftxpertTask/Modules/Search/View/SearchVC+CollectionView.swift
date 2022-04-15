@@ -20,11 +20,12 @@ extension SearchVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return presenter.numberOfFilters
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeue(indexPath: indexPath) as FilterCell
+        presenter.configureFilterCell(cell: cell, indexpath: indexPath)
         return cell
     }
 }
