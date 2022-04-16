@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class DetailsInteractor: DetailsInteractorInputProtocol {
+    
+    var presenter: DetailsInteractorOutputProtocol?
+    
+    //MARK: - Functions
+    
+}

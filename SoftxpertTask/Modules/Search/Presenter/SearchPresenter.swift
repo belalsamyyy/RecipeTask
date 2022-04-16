@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
-
 
     //MARK: - Variables
     
@@ -138,4 +138,10 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
         interactor.getRecipes(searchText: suggestion, filter: .ALL)
     }
     
+    //MARK: - Details
+    
+    func showDetails(navigationController: UINavigationController, indexpath: IndexPath) {
+        let recipe = self.recipes[indexpath.row]
+        router.pushToDetailsView(navigationController: navigationController, recipe: recipe)
+    }
 }

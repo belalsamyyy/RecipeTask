@@ -68,6 +68,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
             
         case recipesTableView:
             print("recipe tapped")
+            presenter.showDetails(navigationController: navigationController!, indexpath: indexPath)
             
         default:
             print("default case")

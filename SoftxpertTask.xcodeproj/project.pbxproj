@@ -47,6 +47,7 @@
 		4178A896280A747400EA7E85 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A895280A747400EA7E85 /* DetailsInteractor.swift */; };
 		4178A898280A748300EA7E85 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A897280A748300EA7E85 /* DetailsPresenter.swift */; };
 		4178A89A280A749200EA7E85 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A899280A749200EA7E85 /* DetailsRouter.swift */; };
+		4178A89C280A8AD100EA7E85 /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A89B280A8AD100EA7E85 /* RecipeDetailsViewModel.swift */; };
 		8A68E1236C72B38F8DBA6828 /* Pods_SoftxpertTask_SoftxpertTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBF4F8CAC7E3B2A393A9EC5 /* Pods_SoftxpertTask_SoftxpertTaskUITests.framework */; };
 		B5450825BCE8D28BFCA3DED4 /* Pods_SoftxpertTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3094297381F59B567F4A2C91 /* Pods_SoftxpertTask.framework */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		4178A895280A747400EA7E85 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
 		4178A897280A748300EA7E85 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
 		4178A899280A749200EA7E85 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
+		4178A89B280A8AD100EA7E85 /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		4FBF4F8CAC7E3B2A393A9EC5 /* Pods_SoftxpertTask_SoftxpertTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoftxpertTask_SoftxpertTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4B18A0FF0DC90850F8AAED /* Pods-SoftxpertTask-SoftxpertTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertTask-SoftxpertTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-SoftxpertTask-SoftxpertTaskUITests/Pods-SoftxpertTask-SoftxpertTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DB3382D2E325D00C0AC0B0BE /* Pods-SoftxpertTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertTask.release.xcconfig"; path = "Target Support Files/Pods-SoftxpertTask/Pods-SoftxpertTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		4106BAA12804B8EF0018B2CB /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				4178A89B280A8AD100EA7E85 /* RecipeDetailsViewModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				4178A8852809C1FE00EA7E85 /* SearchVC+TableViews.swift in Sources */,
 				4106BA652804B35B0018B2CB /* SceneDelegate.swift in Sources */,
 				412650932808A73800D7FB2E /* Recipe.swift in Sources */,
+				4178A89C280A8AD100EA7E85 /* RecipeDetailsViewModel.swift in Sources */,
 				412650952808A7DD00D7FB2E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
