@@ -27,4 +27,9 @@ class SearchRouter: SearchRouterProtocol {
         return view
     }
     
+    func pushToDetailsView(navigationController: UINavigationController) {
+        let detailsView = SearchRouter.createModule()
+        navigationController.pushViewController(detailsView, animated: true)
+    }
+    
 }

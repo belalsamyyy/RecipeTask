@@ -43,6 +43,10 @@
 		4178A88E280A149800EA7E85 /* SearchVC+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A88D280A149800EA7E85 /* SearchVC+SearchBar.swift */; };
 		4178A890280A1FA300EA7E85 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A88F280A1FA300EA7E85 /* String+Extensions.swift */; };
 		4178A892280A381500EA7E85 /* SuggestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A891280A381500EA7E85 /* SuggestionViewModel.swift */; };
+		4178A894280A746000EA7E85 /* DetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A893280A746000EA7E85 /* DetailsProtocols.swift */; };
+		4178A896280A747400EA7E85 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A895280A747400EA7E85 /* DetailsInteractor.swift */; };
+		4178A898280A748300EA7E85 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A897280A748300EA7E85 /* DetailsPresenter.swift */; };
+		4178A89A280A749200EA7E85 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178A899280A749200EA7E85 /* DetailsRouter.swift */; };
 		8A68E1236C72B38F8DBA6828 /* Pods_SoftxpertTask_SoftxpertTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBF4F8CAC7E3B2A393A9EC5 /* Pods_SoftxpertTask_SoftxpertTaskUITests.framework */; };
 		B5450825BCE8D28BFCA3DED4 /* Pods_SoftxpertTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3094297381F59B567F4A2C91 /* Pods_SoftxpertTask.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +113,10 @@
 		4178A88D280A149800EA7E85 /* SearchVC+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+SearchBar.swift"; sourceTree = "<group>"; };
 		4178A88F280A1FA300EA7E85 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4178A891280A381500EA7E85 /* SuggestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewModel.swift; sourceTree = "<group>"; };
+		4178A893280A746000EA7E85 /* DetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProtocols.swift; sourceTree = "<group>"; };
+		4178A895280A747400EA7E85 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
+		4178A897280A748300EA7E85 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		4178A899280A749200EA7E85 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
 		4FBF4F8CAC7E3B2A393A9EC5 /* Pods_SoftxpertTask_SoftxpertTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoftxpertTask_SoftxpertTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4B18A0FF0DC90850F8AAED /* Pods-SoftxpertTask-SoftxpertTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertTask-SoftxpertTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-SoftxpertTask-SoftxpertTaskUITests/Pods-SoftxpertTask-SoftxpertTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DB3382D2E325D00C0AC0B0BE /* Pods-SoftxpertTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertTask.release.xcconfig"; path = "Target Support Files/Pods-SoftxpertTask/Pods-SoftxpertTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,6 +336,7 @@
 		4106BAA02804B8E60018B2CB /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4178A899280A749200EA7E85 /* DetailsRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -342,6 +351,7 @@
 		4106BAA22804B8FB0018B2CB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				4178A897280A748300EA7E85 /* DetailsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -349,6 +359,7 @@
 		4106BAA32804B9030018B2CB /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				4178A895280A747400EA7E85 /* DetailsInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -372,6 +383,7 @@
 		4106BAA72804BBBC0018B2CB /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				4178A893280A746000EA7E85 /* DetailsProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -710,18 +722,22 @@
 				4178A88C280A0C2400EA7E85 /* HealthFilter.swift in Sources */,
 				412650912808A6EB00D7FB2E /* SearchVC.swift in Sources */,
 				412650A32808B37A00D7FB2E /* FilterCell.swift in Sources */,
+				4178A894280A746000EA7E85 /* DetailsProtocols.swift in Sources */,
 				412650A72808B3A000D7FB2E /* SuggestionCell.swift in Sources */,
 				4178A87C2808EBC400EA7E85 /* SearchRouter.swift in Sources */,
 				4178A8892809F53400EA7E85 /* FilterViewModel.swift in Sources */,
 				4106BA672804B35B0018B2CB /* ViewController.swift in Sources */,
 				4106BA632804B35B0018B2CB /* AppDelegate.swift in Sources */,
+				4178A89A280A749200EA7E85 /* DetailsRouter.swift in Sources */,
 				4178A892280A381500EA7E85 /* SuggestionViewModel.swift in Sources */,
 				4178A88128090A7B00EA7E85 /* RecipeViewModel.swift in Sources */,
+				4178A896280A747400EA7E85 /* DetailsInteractor.swift in Sources */,
 				4178A8832809932D00EA7E85 /* RecipeAPIManager.swift in Sources */,
 				4126509B2808B2C700D7FB2E /* DetailsVC.swift in Sources */,
 				4178A890280A1FA300EA7E85 /* String+Extensions.swift in Sources */,
 				4126509F2808B34800D7FB2E /* RecipeCell.swift in Sources */,
 				4178A88E280A149800EA7E85 /* SearchVC+SearchBar.swift in Sources */,
+				4178A898280A748300EA7E85 /* DetailsPresenter.swift in Sources */,
 				417474BB2808C92F00AAAB95 /* UITableView+Extensions.swift in Sources */,
 				412650972808AD2A00D7FB2E /* UserDefaultsManager.swift in Sources */,
 				4178A8872809C21300EA7E85 /* SearchVC+CollectionView.swift in Sources */,

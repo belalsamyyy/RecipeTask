@@ -137,4 +137,5 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
         view?.showLoadingIndicator()
         interactor.getRecipes(searchText: suggestion, filter: .ALL)
     }
+    
 }

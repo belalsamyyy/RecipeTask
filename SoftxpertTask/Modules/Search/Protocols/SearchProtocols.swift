@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // view controller
 // ===================================
@@ -64,7 +65,9 @@ protocol SearchPresenterProtocol: AnyObject {
 
 // router
 // ===================================
-protocol SearchRouterProtocol {}
+protocol SearchRouterProtocol {
+    func pushToDetailsView(navigationController: UINavigationController)
+}
 
 // Interactor
 // ===================================
