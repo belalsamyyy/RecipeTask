@@ -5,10 +5,12 @@
 //  Created by Belal Samy on 14/04/2022.
 //
 
+import Foundation
 import UIKit
 import SDWebImage
+import SafariServices
 
-class DetailsVC: UIViewController, DetailsViewProtocol {
+class DetailsVC: UIViewController, DetailsViewProtocol, SFSafariViewControllerDelegate {
     
     //MARK: - Outlets
     @IBOutlet weak var recipeDetailsImageView: UIImageView!
@@ -45,11 +47,19 @@ class DetailsVC: UIViewController, DetailsViewProtocol {
     
     @objc func handleShareBtnTapped() {
         print("share btn tapped ...")
+        let items = [URL(string: presenter.recipeViewModel?.url ?? "")!]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
     }
     
     @IBAction func recipeWebsiteBtnTapped(_ sender: Any) {
-        //
+        let urlString = presenter.recipeViewModel?.url ?? ""
+        if let url = URL(string: urlString) {
+            let configuration = SFSafariViewController.Configuration()
+            configuration.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: configuration)
+            vc.delegate = self
+            present(vc, animated: true)
+        }
     }
-    
-    
 }
