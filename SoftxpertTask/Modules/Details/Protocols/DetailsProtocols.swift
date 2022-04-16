@@ -12,6 +12,7 @@ import UIKit
 // ===================================
 protocol DetailsViewProtocol: AnyObject {
     var presenter: DetailsPresenterProtocol! { get set }
+    func setupViews()
 }
 
 // presenter

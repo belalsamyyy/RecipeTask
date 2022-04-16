@@ -8,7 +8,7 @@
 import Foundation
 
 class DetailsPresenter: DetailsPresenterProtocol, DetailsInteractorOutputProtocol {
-    
+
     //MARK: - Variables
 
     weak var view: DetailsViewProtocol?
@@ -31,7 +31,7 @@ class DetailsPresenter: DetailsPresenterProtocol, DetailsInteractorOutputProtoco
     
     func viewDidLoad() {
         print("viewDidLoad from presenter ...")
-        print(">>> \(recipeViewModel?.title)")
+        view?.setupViews()
     }
     
 }
