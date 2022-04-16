@@ -27,7 +27,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case suggestionTableView:
-            return 3
+            return presenter.suggestionsArr.count
         case recipesTableView:
             return presenter.numberOfRecipes
         default:
@@ -39,6 +39,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case suggestionTableView:
             let cell = tableView.dequeue() as SuggestionCell
+            presenter.configureSuggestionCell(cell: cell, indexpath: indexPath)
             return cell
             
         case recipesTableView:
@@ -60,6 +61,16 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("table cell tapped !")
+        switch tableView {
+        case suggestionTableView:
+            print("suggestion tapped")
+            presenter.suggestionCellTapped(indexpath: indexPath)
+            
+        case recipesTableView:
+            print("recipe tapped")
+            
+        default:
+            print("default case")
+        }
     }
 }

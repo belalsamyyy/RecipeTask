@@ -13,7 +13,16 @@ protocol SearchViewProtocol: AnyObject {
     var presenter: SearchPresenterProtocol! { get set }
     func showLoadingIndicator()
     func hideLoadingIndicator()
-    func reloadData() 
+    
+    func showNoRecipesLabel()
+    func hideNoRecipesLabel()
+    
+    func showSuggestionList()
+    func hideSuggestionList()
+    
+    func setSearchBarText(text: String)
+    
+    func reloadData()
 }
 
 // recipe cell view
@@ -27,10 +36,17 @@ protocol FilterCellViewProtocol: AnyObject {
     func configure(viewModel: FilterViewModel)
 }
 
+// suggestion cell view
+protocol SuggestionCellViewProtocol: AnyObject {
+    func configure(viewModel: SuggestionViewModel)
+}
+
 // presenter
 // ===================================
 protocol SearchPresenterProtocol: AnyObject {
     var view: SearchViewProtocol? { get set } // to avoid retain cycle
+    var searchText: String { get }
+    var suggestionsArr: [String] { get }
     var numberOfRecipes: Int { get }
     var numberOfFilters: Int { get }
     var next: String { get }
@@ -38,8 +54,12 @@ protocol SearchPresenterProtocol: AnyObject {
     func viewDidLoad()
     func configureRecipeCell(cell: RecipeCell, indexpath: IndexPath)
     func configureFilterCell(cell: FilterCell, indexpath: IndexPath)
+    func configureSuggestionCell(cell: SuggestionCell, indexpath: IndexPath)
+    
     func healthFilterTapped(item: Int)
     func didWeReachToEnd(indexpath: IndexPath)
+    func searchBtnTapped(searchText: String)
+    func suggestionCellTapped(indexpath: IndexPath)
 }
 
 // router

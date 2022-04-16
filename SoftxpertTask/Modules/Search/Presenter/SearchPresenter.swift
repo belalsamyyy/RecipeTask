@@ -8,13 +8,20 @@
 import Foundation
 
 class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
-    
+
+
     //MARK: - Variables
     
     weak var view: SearchViewProtocol? // to avoid retain cycle
     private let interactor: SearchInteractorInputProtocol
     private let router: SearchRouterProtocol
     
+    // search
+    var searchText: String = ""
+    var suggestionsArr: [String] {
+        return Defaults.suggestionsArr
+    }
+
     // recipes
     private var recipes = [Recipe]()
     var next: String = ""
@@ -40,8 +47,6 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
     
     func viewDidLoad() {
         print("ViewDidLoad from Presenter ...")
-        view?.showLoadingIndicator()
-        interactor.getRecipes(searchText: "chicken", filter: .ALL)
     }
     
     //MARK: - Recipes
@@ -51,7 +56,7 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
         view?.hideLoadingIndicator()
         self.recipes.append(contentsOf: recipes)
         view?.reloadData()
-        
+        view?.hideNoRecipesLabel()
         // next
         self.next = next
         print("next from presenter => \(next)")
@@ -60,6 +65,8 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
     func recipesFetchingFailed(withError error: String) {
         // failure - should show alert
         view?.hideLoadingIndicator()
+        self.recipes.removeAll()
+        view?.showNoRecipesLabel()
     }
     
     
@@ -82,7 +89,7 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
         print("=> \(selectedFilter.rawValue) tapped filter !")
         self.recipes.removeAll() // make recipes array empty
         view?.showLoadingIndicator() // show loading indicator
-        interactor.getRecipes(searchText: "chicken", filter: selectedFilter) // refetch recieps with the new filter
+        interactor.getRecipes(searchText: self.searchText, filter: selectedFilter) // refetch recieps with the new filter
         view?.reloadData()
     }
     
@@ -96,4 +103,38 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
         }
     }
     
+    //MARK: - Search Bar
+    
+    func searchBtnTapped(searchText: String) {
+        self.searchText = searchText
+        
+        self.recipes.removeAll()
+        view?.showLoadingIndicator()
+        interactor.getRecipes(searchText: self.searchText, filter: .ALL)
+        
+        if Defaults.suggestionsArr.count < 11 {
+            Defaults.suggestionsArr.append(searchText)
+        } else {
+            Defaults.suggestionsArr.insert(searchText, at: 0)
+        }
+    }
+    
+    //MARK: - Suggestions
+    
+    func configureSuggestionCell(cell: SuggestionCell, indexpath: IndexPath) {
+        let suggestion = suggestionsArr[indexpath.row]
+        let viewModel = SuggestionViewModel(suggestion: suggestion)
+        cell.configure(viewModel: viewModel)
+    }
+    
+    func suggestionCellTapped(indexpath: IndexPath) {
+        let suggestion = Defaults.suggestionsArr[indexpath.row]
+        view?.setSearchBarText(text: suggestion)
+        view?.hideSuggestionList()
+        
+        self.searchText = suggestion
+        self.recipes.removeAll()
+        view?.showLoadingIndicator()
+        interactor.getRecipes(searchText: suggestion, filter: .ALL)
+    }
 }

@@ -15,6 +15,7 @@ struct EndPoints {
     static let search = "/api/recipes/v2"
 }
 
-
-
+struct UserDefaultsKeys {
+    static let suggestionsArr = "suggestionsArr"
+}
 

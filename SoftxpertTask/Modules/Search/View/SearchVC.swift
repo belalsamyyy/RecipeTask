@@ -21,7 +21,6 @@ class SearchVC: UIViewController, SearchViewProtocol {
     @IBOutlet weak var recipesActivityIndicator: UIActivityIndicatorView!
     
     
-    
     //MARK: - Presenter
     var presenter: SearchPresenterProtocol!
 
@@ -34,9 +33,15 @@ class SearchVC: UIViewController, SearchViewProtocol {
         setupCollectionView()
         setupSearchBar()
         presenter?.viewDidLoad()
+        recipesActivityIndicator.isHidden = true
     }
     
     //MARK: - Functions
+    
+    func reloadData() {
+        recipesTableView.reloadData()
+        suggestionTableView.reloadData()
+    }
     
     // Loading Indicator
     func showLoadingIndicator() {
@@ -51,10 +56,28 @@ class SearchVC: UIViewController, SearchViewProtocol {
         recipesActivityIndicator.isHidden = true
     }
     
-    func reloadData() {
-        recipesTableView.reloadData()
+    // no recipes label
+    func showNoRecipesLabel() {
+        noRecipesLbl.isHidden = false
     }
-
+    
+    func hideNoRecipesLabel() {
+        noRecipesLbl.isHidden = true
+    }
+    
+    // suggestion list 
+    func showSuggestionList() {
+        suggestionTableView.isHidden = false
+    }
+    
+    func hideSuggestionList() {
+        searchBar.resignFirstResponder()
+        suggestionTableView.isHidden = true
+    }
+    
+    func setSearchBarText(text: String) {
+        searchBar.text = text
+    }
 }
 
 

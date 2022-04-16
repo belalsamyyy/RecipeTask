@@ -7,12 +7,14 @@
 
 import UIKit
 
-class SuggestionCell: UITableViewCell {
+class SuggestionCell: UITableViewCell, SuggestionCellViewProtocol {
 
     //MARK: - Outlets
     
     @IBOutlet weak var suggestionLbl: UILabel!
     
+    //MARK: - Lifecycle
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +24,12 @@ class SuggestionCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    //MARK: - Functions
+
+    func configure(viewModel: SuggestionViewModel) {
+        suggestionLbl.text = viewModel.name
     }
     
 }
