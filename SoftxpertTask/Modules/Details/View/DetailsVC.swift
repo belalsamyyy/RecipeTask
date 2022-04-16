@@ -34,7 +34,18 @@ class DetailsVC: UIViewController, DetailsViewProtocol {
         recipeDetailsIngredientsLbl.text = presenter.recipeViewModel?.ingredientLines
     }
     
+    func setupNavBar() {
+        // Navigation right Button
+        let shareImage = UIImage(named: "icon-share")
+        let shareBtn = UIBarButtonItem(image: shareImage,style: .plain, target: self, action: #selector(handleShareBtnTapped))
+        navigationItem.rightBarButtonItem = shareBtn
+    }
+    
     //MARK: - Actions
+    
+    @objc func handleShareBtnTapped() {
+        print("share btn tapped ...")
+    }
     
     @IBAction func recipeWebsiteBtnTapped(_ sender: Any) {
         //

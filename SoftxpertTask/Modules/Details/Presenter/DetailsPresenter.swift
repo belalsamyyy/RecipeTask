@@ -32,6 +32,7 @@ class DetailsPresenter: DetailsPresenterProtocol, DetailsInteractorOutputProtoco
     func viewDidLoad() {
         print("viewDidLoad from presenter ...")
         view?.setupViews()
+        view?.setupNavBar()
     }
     
 }
