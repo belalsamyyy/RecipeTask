@@ -62,13 +62,13 @@ protocol SearchPresenterProtocol: AnyObject {
     func searchBtnTapped(searchText: String)
     func suggestionCellTapped(indexpath: IndexPath)
     
-    func showDetails(navigationController: UINavigationController, indexpath: IndexPath)
+    func showDetails(indexpath: IndexPath)
 }
 
 // router
 // ===================================
 protocol SearchRouterProtocol {
-    func pushToDetailsView(navigationController: UINavigationController, recipe: Recipe)
+    func pushToDetailsView(recipe: Recipe)
 }
 
 // Interactor

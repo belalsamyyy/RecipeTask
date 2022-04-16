@@ -112,11 +112,11 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
         view?.showLoadingIndicator()
         interactor.getRecipes(searchText: self.searchText, filter: .ALL)
         
-        if Defaults.suggestionsArr.count < 11 {
-            Defaults.suggestionsArr.append(searchText)
-        } else {
-            Defaults.suggestionsArr.insert(searchText, at: 0)
+        if Defaults.suggestionsArr.count == 10 {
+            Defaults.suggestionsArr.remove(at: 0)
         }
+        
+        Defaults.suggestionsArr.append(searchText)
     }
     
     //MARK: - Suggestions
@@ -140,8 +140,8 @@ class SearchPresenter: SearchPresenterProtocol, SearchInteractorOutputProtocol {
     
     //MARK: - Details
     
-    func showDetails(navigationController: UINavigationController, indexpath: IndexPath) {
+    func showDetails(indexpath: IndexPath) {
         let recipe = self.recipes[indexpath.row]
-        router.pushToDetailsView(navigationController: navigationController, recipe: recipe)
+        router.pushToDetailsView(recipe: recipe)
     }
 }
