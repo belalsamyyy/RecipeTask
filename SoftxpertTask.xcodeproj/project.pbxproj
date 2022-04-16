@@ -220,10 +220,9 @@
 		4106BA932804B7350018B2CB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				4106BA962804B8600018B2CB /* Utilities */,
-				417474BE2808D32A00AAAB95 /* Helpers */,
-				4106BA952804B8580018B2CB /* Extensions */,
+				412650942808A7DD00D7FB2E /* Constants.swift */,
 				4106BAA52804BB900018B2CB /* Managers */,
+				4106BA952804B8580018B2CB /* Extensions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -245,14 +244,6 @@
 				4178A88F280A1FA300EA7E85 /* String+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		4106BA962804B8600018B2CB /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				412650942808A7DD00D7FB2E /* Constants.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		4106BA972804B8700018B2CB /* Search */ = {
@@ -426,13 +417,6 @@
 				412650A62808B3A000D7FB2E /* SuggestionCell.xib */,
 			);
 			path = Suggestion;
-			sourceTree = "<group>";
-		};
-		417474BE2808D32A00AAAB95 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4178A87F2808FACA00EA7E85 /* Networking */ = {

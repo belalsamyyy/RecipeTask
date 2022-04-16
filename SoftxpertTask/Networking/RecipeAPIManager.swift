@@ -36,7 +36,7 @@ class RecipeAPIManager {
 
             case .failure(let error):
                 print("=> \(url)")
-                print("🛑 Request is failed")
+                print("🛑 Request failed")
                 completion(.failure(error: error.localizedDescription))
             }
         }
@@ -55,7 +55,7 @@ class RecipeAPIManager {
 
             case .failure(let error):
                 print("=> \(url)")
-                print("🛑 Request is failed")
+                print("🛑 Request failed")
                 completion(.failure(error: error.localizedDescription))
             }
         }
